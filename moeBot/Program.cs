@@ -11,7 +11,9 @@ namespace moeBot
         static void Main(string[] args)
         {
             // Starting
-            Console.WriteLine("");
+            Start();
         }
     }
+
+    class 
 }
