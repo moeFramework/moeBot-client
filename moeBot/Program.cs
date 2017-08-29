@@ -11,9 +11,7 @@ namespace moeBot
         static void Main(string[] args)
         {
             // Starting
-            Start();
+
         }
     }
-
-    class 
 }
