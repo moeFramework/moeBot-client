@@ -8,7 +8,7 @@ namespace moeInterface
 {
     public interface IPlugin
     {
-        string Name{ get; }
+        string Name { get; }
         string Do();
     }
 }
