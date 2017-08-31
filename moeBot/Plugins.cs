@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Plugins
 {
@@ -35,10 +38,37 @@ namespace Plugins
     }
     class Loader
     {
-        public static void PluginLoad()
+        public static void Plugin()
         {
 
         }
+
+
+
+        //Find Path
+        
+        private List<string> PathFinder()
+        {
+            List<string> pluginpath = new List<string>();
+            try
+            {
+                //获取程序的基目录
+                string path = AppDomain.CurrentDomain.BaseDirectory;
+                //合并路径，指向插件所在目录。
+                path = Path.Combine(path, "Plugins");
+                foreach (string filename in Directory.GetFiles(path, "*.dll"))
+                {
+                    pluginpath.Add(filename);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            return pluginpath;
+        }
+
+        //private 
     }
 
     class Initializer
