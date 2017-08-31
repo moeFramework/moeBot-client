@@ -11,7 +11,8 @@ namespace moeBot
         static void Main(string[] args)
         {
             // Starting
-
+            Plugins.Plugin.LoadIn();
+            Console.ReadLine();
         }
     }
 }
