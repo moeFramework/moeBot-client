@@ -9,6 +9,13 @@ namespace moeInterface
     public interface IPlugin
     {
         string Name { get; }
-        string Do();
+
+        string shortID { get; }
+
+        string compatible_version { get; }
+        
+        string Hello();
+
+        void Start();
     }
 }
