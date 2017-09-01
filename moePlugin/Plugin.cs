@@ -13,13 +13,34 @@ namespace moePlugin
         {
             get
             {
-                return "First Plugin";
+                return "moeBot Plugin";
             }
         }
 
-        public string Do()
+        public string shortID
         {
-            return "Do Something in First Plugin";
+            get
+            {
+                return "moePlugin";
+            }
+        }
+
+        public string compatible_version
+        {
+            get
+            {
+                return "0.0.1";
+            }
+        }
+
+        public string Hello()
+        {
+            return "Hello, " + Name + " has been loaded!";
+        }
+
+        public void Start()
+        {
+            
         }
     }
 }
