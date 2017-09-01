@@ -1,0 +1,12 @@
+﻿{
+  "name": "Example Plugin",
+  "id": "expl",
+  "alternatedid": "explP",
+  "version": "1.0.0",
+  "compatible-version": "(1.0.0",
+  "description": "This is A Example Plugin Created by Your Cat.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/moeBot-plugin-example"
+  }
+}
