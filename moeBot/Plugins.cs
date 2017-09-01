@@ -21,10 +21,6 @@ namespace Plugins
          *   "version": "1.0.0",
          *   "compatible-version": "(1.0.0",
          *   "description": "This is A Example Plugin Created by Your Cat.",
-         *   "contributors": ["Cat", "Neko"],
-         *   "credits": ,
-         *   "root": "./example",
-         *   "config": "./example/config",
          *   "repository":
          *   {
          *     "type": "git",
@@ -50,6 +46,12 @@ namespace Plugins
         {
             string PluginName = null;
 
+            if(Load().Count == 0)
+            {
+                Console.WriteLine("No Plugins Found.");
+                return;
+            }
+
             Dictionary<string, IPlugin> _Plugins = new Dictionary<string, IPlugin>();
             ICollection<IPlugin> plugins = Load();
             Console.WriteLine("All plugins loaded.");
@@ -61,7 +63,14 @@ namespace Plugins
                 Console.WriteLine(PluginName);
             }
 
-            Console.WriteLine(_Plugins[PluginName].Do());
+            try
+            {
+                Console.WriteLine(_Plugins[PluginName].Hello());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private ICollection<IPlugin> Load()
@@ -135,8 +144,6 @@ namespace Plugins
             }
             return pluginpath;
         }
-
-        //private 
     }
 
     class Initializer
