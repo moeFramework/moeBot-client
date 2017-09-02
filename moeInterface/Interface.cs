@@ -12,7 +12,7 @@ namespace moeInterface
         //Get the Plugin Name
 
         string shortID { get; }
-        //Get the Plugin ID ( for command also )
+        //Get the Plugin ID ( for command mode )
 
         string compatible_version { get; }
         //Get the compatible version for checking the compatibility
