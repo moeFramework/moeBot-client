@@ -17,6 +17,9 @@ namespace moeInterface
         string compatible_version { get; }
         //Get the compatible version for checking the compatibility
 
+        string applicationPath(string path);
+        //return the current application path to plugin
+
         string Hello();
         //Check the Function
 
