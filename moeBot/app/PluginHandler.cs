@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace moeBot.app
 {
-    class Neko
+    class PluginHandler
     {
-        public void love()
-        {
 
-        }
     }
 }
