@@ -44,16 +44,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\moeInterface\moeInterface.csproj">
-      <Project>{820a07b2-4985-4955-b3b1-d298a18d1d09}</Project>
-      <Name>moeInterface</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="info.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\moeInterface\moeInterface.csproj">
+      <Project>{820a07b2-4985-4955-b3b1-d298a18d1d09}</Project>
+      <Name>moeInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
