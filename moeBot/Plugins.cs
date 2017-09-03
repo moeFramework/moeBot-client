@@ -39,14 +39,18 @@ namespace Plugins
             l.Plugin();
 
         }
+
+        
     }
+
     class Loader
     {
         public void Plugin()
         {
             string PluginName = null;
+            string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
 
-            if(Load().Count == 0)
+            if (Load().Count == 0)
             {
                 Console.WriteLine("No Plugins Found.");
                 return;
@@ -61,20 +65,24 @@ namespace Plugins
                 _Plugins.Add(plugin.Name, plugin);
                 PluginName = plugin.Name;
                 Console.WriteLine(PluginName);
-            }
 
-            try
-            {
-                Console.WriteLine(_Plugins[PluginName].Hello());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    Console.WriteLine(_Plugins[PluginName].Hello());
+                    _Plugins[PluginName].Start();
+                    _Plugins[PluginName].applicationPath(applicationPath);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
 
         private ICollection<IPlugin> Load()
         {
+            //Load the plugin into Assembly and return the ICollection back
+
             Console.WriteLine("Initializing Plugins...");
             List<string> dllFileNames = PathFinder();
             ICollection<Assembly> assemblies = new List<Assembly>(PathFinder().Count);
@@ -105,7 +113,6 @@ namespace Plugins
                             if (type.GetInterface(pluginType.FullName) != null)
                             {
                                 pluginTypes.Add(type);
-                                Console.WriteLine("Added " + type + " type.");
                             }
                         }
                     }
@@ -135,7 +142,6 @@ namespace Plugins
                 foreach (string filename in Directory.GetFiles(path, "*.dll"))
                 {
                     pluginpath.Add(filename);
-                    Console.WriteLine("Added " + filename);
                 }
             }
             catch (Exception ex)
@@ -155,6 +161,7 @@ namespace Plugins
         public static void Initialization()
         {
             //Todo
+
         }
     }
 }
