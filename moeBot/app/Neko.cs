@@ -10,7 +10,7 @@ namespace moeBot.app
     {
         public void love()
         {
-
+            //Todo
         }
     }
 }
