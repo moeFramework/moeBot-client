@@ -33,6 +33,11 @@ namespace moePlugin
             }
         }
 
+        public string applicationPath(string path)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Hello()
         {
             return "Hello, " + Name + " has been loaded!";
