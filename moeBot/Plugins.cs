@@ -37,10 +37,7 @@ namespace Plugins
         {
             Loader l = new Loader();
             l.Plugin();
-
         }
-
-        
     }
 
     class Loader

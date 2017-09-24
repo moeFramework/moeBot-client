@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app\config\ConfigReader.cs" />
     <Compile Include="app\Json.cs" />
     <Compile Include="app\Neko.cs" />
     <Compile Include="app\PluginHandler.cs" />
